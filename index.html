@@ -1,0 +1,38 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000000000000000000000000000000000000..4608924c65323346938d71286e0407f4c6aadb86
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,27 @@
++<!DOCTYPE html>
++<html lang="tr">
++<head>
++  <meta charset="UTF-8" />
++  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++  <title>Basit Uzay Savaşı</title>
++  <link rel="stylesheet" href="style.css" />
++</head>
++<body>
++  <main class="page">
++    <section class="panel">
++      <header class="panel__header">
++        <h1>2D Uzay Savaşı</h1>
++        <p class="subtitle">Sol/Sağ: <kbd>A</kbd>/<kbd>D</kbd> veya ok tuşları · Ateş: <kbd>Boşluk</kbd></p>
++        <button id="restart" type="button">Yeniden Başlat</button>
++      </header>
++      <canvas id="game" width="900" height="600" aria-label="2 boyutlu uzay savaşı"></canvas>
++      <footer class="panel__footer">
++        <div class="stat"><span>Can:</span> <strong id="lives">3</strong></div>
++        <div class="stat"><span>Puan:</span> <strong id="score">0</strong></div>
++        <div class="stat"><span>Durum:</span> <strong id="status">Hazır</strong></div>
++      </footer>
++    </section>
++  </main>
++  <script src="main.js"></script>
++</body>
++</html>
+ 
+EOF
+)
+   
